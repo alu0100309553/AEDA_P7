@@ -1,9 +1,9 @@
 /*
- * cola.hpp
+ * arbol.hpp
  * Autor: Rubén Labrador Páez
  * EMail: alu0100309553@ull.edu.es
  * Grado en Ingeniería informática, 2ºCurso, Universidad de La Laguna.
- * Algoritmos y estructuras de datos avanzadas, Práctica 6, ArbolBB
+ * Algoritmos y estructuras de datos avanzadas, Práctica 7, ArbolAVL
  */
 
 #ifndef cola_HPP_
@@ -18,13 +18,13 @@ using namespace std;
 template<class T_N>
 class nodo{
   private:
-    nodoBB<T_N> *valor;
+    nodoAVL<T_N> *valor;
     nodo<T_N> *siguiente;
     int nivel;
     template<class T_C>
     friend class cola;
   public:
-    nodo(nodoBB<T_N> *x, int niv, nodo *sig = NULL){
+    nodo(nodoAVL<T_N> *x, int niv, nodo *sig = NULL){
       valor = x;
       nivel = niv;
       siguiente = sig;
@@ -43,10 +43,10 @@ class cola{
   public:
     cola() : ultimo(NULL), primero(NULL) {}
     ~cola();
-    void add(nodoBB<T_C> *ele, int nivel);
+    void add(nodoAVL<T_C> *ele, int nivel);
     bool vacia();
     T_C leer();
-    nodoBB<T_C>* extraer(int &nivel);
+    nodoAVL<T_C>* extraer(int &nivel);
 };
 
 
@@ -54,7 +54,7 @@ template<class T_C>
 cola<T_C>::~cola(){}
 
 template<class T_C>
-void cola<T_C>::add(nodoBB<T_C> *ele, int nivel){
+void cola<T_C>::add(nodoAVL<T_C> *ele, int nivel){
   punt_nodo nuevo;
   nuevo = new nodo<T_C>(ele,nivel);
   if(ultimo != NULL){
@@ -79,9 +79,9 @@ bool cola<T_C>::vacia(){
 }
 
 template<class T_C>
-nodoBB<T_C>* cola<T_C>::extraer(int &nivel){
+nodoAVL<T_C>* cola<T_C>::extraer(int &nivel){
   punt_nodo punt_aux;
-  nodoBB<T_C> *aux;
+  nodoAVL<T_C> *aux;
 
   punt_aux = primero;
   primero = punt_aux->siguiente;

@@ -1,9 +1,9 @@
 /*
- * DNI.hpp
+ * arbol.hpp
  * Autor: Rubén Labrador Páez
  * EMail: alu0100309553@ull.edu.es
  * Grado en Ingeniería informática, 2ºCurso, Universidad de La Laguna.
- * Algoritmos y estructuras de datos avanzadas, Práctica 6, ArbolBB
+ * Algoritmos y estructuras de datos avanzadas, Práctica 7, ArbolAVL
  */
 
 #ifndef DNI_HPP_

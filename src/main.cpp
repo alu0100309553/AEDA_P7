@@ -1,9 +1,9 @@
 /*
- * main.cpp
+ * arbol.hpp
  * Autor: Rubén Labrador Páez
  * EMail: alu0100309553@ull.edu.es
  * Grado en Ingeniería informática, 2ºCurso, Universidad de La Laguna.
- * Algoritmos y estructuras de datos avanzadas, Práctica 6, ArbolBB
+ * Algoritmos y estructuras de datos avanzadas, Práctica 7, ArbolAVL
  */
 
 #include <iostream>
@@ -28,7 +28,7 @@ int main(){
 	switch(opcion){
 		case 1:{
 			//Modo demostracion
-			ArbolBB<DNI> arbol;
+			ArbolAVL<DNI> arbol;
 			int opcionDemo = 0;
 			do{
 				cout << "==== ARBOL ====" << endl;
@@ -67,7 +67,7 @@ int main(){
 			}while(opcionDemo != 3);
 		}break;
 		case 2:{
-			ArbolBB<DNI> arbol;
+			ArbolAVL<DNI> arbol;
 			int num_nodos;
 			int num_pruebas;
 			cout << "Introduzca el numero de nodos del arbol: ";

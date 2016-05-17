@@ -1,9 +1,9 @@
 /*
- * nodo.hpp
+ * arbol.hpp
  * Autor: Rubén Labrador Páez
  * EMail: alu0100309553@ull.edu.es
  * Grado en Ingeniería informática, 2ºCurso, Universidad de La Laguna.
- * Algoritmos y estructuras de datos avanzadas, Práctica 6, ArbolBB
+ * Algoritmos y estructuras de datos avanzadas, Práctica 7, ArbolAVL
  */
 
 #ifndef nodo_HPP_
@@ -14,24 +14,18 @@
 using namespace std;
 
 template<class T>
-class nodoBB
-{
+class nodoAVL{
 public:
-    nodoBB(T cl, nodoBB *iz=NULL, nodoBB *de=NULL):
-        clave(cl),
-        izdo(iz),
-        dcho(de)
-        {}
+    nodoAVL(T cl, nodoAVL *iz=NULL, nodoAVL *de=NULL):clave(cl),bal(0),izdo(iz),dcho(de){}
     T clave;
-    nodoBB<T> *izdo;
-    nodoBB<T> *dcho;
-
+    int bal;
+    nodoAVL<T> *izdo;
+    nodoAVL<T> *dcho;
     void write();
 };
 
 template<class T>
-void nodoBB<T>::write()
-{
+void nodoAVL<T>::write(){
     cout << clave << " ";
 }
 #endif /* nodo_HPP_ */
